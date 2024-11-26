@@ -25,9 +25,9 @@ public class RepositorioMarcas implements Procesos {
         Connection conn = cone.obtenerConexion();
         CallableStatement cmd = conn.prepareCall("{CALL sp_Marcas(?,?,?)}");
         
-        cmd.setLong(1,codigo);
-        cmd.setString(2,nombre);
-        cmd.setString(3,accion);
+        cmd.setString(1,accion);
+        cmd.setLong(2,codigo);
+        cmd.setString(3,nombre);
         
         cmd.execute();
         } 
@@ -48,9 +48,9 @@ public class RepositorioMarcas implements Procesos {
         Connection conn = cone.obtenerConexion();
         CallableStatement cmd = conn.prepareCall("{CALL sp_Marcas(?,?,?)}");
         
-        cmd.setLong(1,codigo);
-        cmd.setString(2,nombre);
-        cmd.setString(3,accion);
+        cmd.setString(1,accion);
+        cmd.setLong(2,codigo);
+        cmd.setString(3,nombre);
         
         rs = cmd.executeQuery();
         rsmd = rs.getMetaData();
